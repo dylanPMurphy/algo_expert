@@ -10,7 +10,7 @@ class BST:
 
     def insert(self, value):
         runner = self
-		while runner:
+        while runner:
 			if value < runner.value:
 				if runner.left == None:
 					runner.left = BST(value)
@@ -27,9 +27,23 @@ class BST:
 
     def contains(self, value):
         # Write your code here.
-        pass
+        runner = self
+        while runner:
+            if runner.value == value:
+                return True
+            elif value < runner.value:
+                runner = runner.left
+            else:
+                runner = runner.right
+        return False
 
     def remove(self, value):
         # Write your code here.
         # Do not edit the return statement of this method.
         return self
+
+tree = BST(23)
+tree.insert(234).insert(234235).insert(12)
+
+print(tree.contains(23))
+print(tree.contains(24))
