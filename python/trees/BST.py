@@ -61,7 +61,7 @@ class BST:
 						runner.left = runner.right.left
 						runner.right = runner.right.right
 					else:
-						runner.value = None
+						pass
 				elif parentNode.left == runner:
 					parentNode.left = runner.left if runner.left is not None else runner.right
 				elif parentNode.right == runner:
