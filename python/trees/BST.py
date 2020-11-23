@@ -74,7 +74,22 @@ class BST:
 		while runner.left is not None:
 			runner = runner.left
 		return runner.value
+	def findClosestValueInBst(tree, target):
+		return findClosestValueInBstHelper(tree, target, float("inf"))
 
+
+	def findClosestValueInBstHelper(tree, target, closest):
+	
+		if tree is None:
+			return closest
+		if abs(target - closest)> abs(target- tree.value):
+			closest = tree.value
+		if target < tree.value:
+			return findClosestValueInBstHelper(tree.left, target, closest)
+		elif target > tree.value:
+			return findClosestValueInBstHelper(tree.right, target, closest)
+		else:
+			return closest
 tree = BST(23)
 tree.insert(234).insert(234235).insert(12).insert(12242).insert(14232).insert(122).insert(112).insert(12)
 print(tree.contains(234))
