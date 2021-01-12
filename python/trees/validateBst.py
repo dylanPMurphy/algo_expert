@@ -1,13 +1,12 @@
 def validateBst(tree):
-    if tree.left:
-		if tree.left.value >= tree.value:
-			return False
-		else:
-			return validateBst(tree.left)
-	elif tree.right:
-		if tree.right.value < tree.value:
-			return False
-		else:
-			return validateBst(tree.right)
-	else:
+    return bstHelper(tree, float('-inf'), float('inf'))
+
+def bstHelper(tree, min, max):
+	if tree is None: 
 		return True
+	if tree.value < min or tree.value >= max:
+		return False
+	
+	leftIsValid = bstHelper(tree.left, min, tree.value)
+
+	return leftIsValid and bstHelper(tree.right, tree.value, max)
