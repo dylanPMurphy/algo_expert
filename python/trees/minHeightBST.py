@@ -2,7 +2,14 @@ def minHeightBst(array):
     return constructMinHeightBST(array, 0, len(array-1))
 
 constructMinHeightBST(array, startIndex, endIndex):
-
+    if endIndex < startIndex:
+        return None
+    
+    midIndex = (endIndex+ startIndex)//2
+    bst = BST(array[midIndex])
+    bst.left = constructMinHeightBST(array, startIndex, midIndex)
+    bst.right = constructMinHeightBST(array, midIndex, endIndex)
+    return bst
 
 
 class BST:
@@ -10,15 +17,3 @@ class BST:
         self.value = value
         self.left = None
         self.right = None
-
-    def insert(self, value):
-        if value < self.value:
-            if self.left is None:
-                self.left = BST(value)
-            else:
-                self.left.insert(value)
-        else:
-            if self.right is None:
-                self.right = BST(value)
-            else:
-                self.right.insert(value)
