@@ -21,3 +21,6 @@
 - Caesar Cipher
 - Three Number Sum
 - validate subsequence
+- Invert Binary Search Tree
+- Max Subset Sum No Adjacent
+- 
