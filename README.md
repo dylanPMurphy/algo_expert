@@ -23,4 +23,5 @@
 - validate subsequence
 - Invert Binary Search Tree
 - Max Subset Sum No Adjacent
-- 
+- Number of Ways to Make Change
+- Breadh First Search
