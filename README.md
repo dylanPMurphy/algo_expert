@@ -25,3 +25,4 @@
 - Max Subset Sum No Adjacent
 - Number of Ways to Make Change
 - Breadh First Search
+- Kadane's Algorithm
